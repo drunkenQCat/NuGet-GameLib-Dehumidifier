@@ -224,10 +224,7 @@ public sealed class HandleUnknownSteamBuildTask : AsyncFrostingTaskBase<BuildCon
     {
         context.Log.Information($"Serializing game version entry for build {gameVersionEntry.BuildId} ...");
         var versionsPath = context.GameDirectory.Combine("versions");
-        if (!Directory.Exists(versionsPath))
-        {
-            Directory.CreateDirectory(versionsPath);
-        }
+        context.EnsureDirectoryExists(versionsPath);
         await using FileStream versionDataStream = File.OpenWrite(versionsPath.CombineWithFilePath($"{gameVersionEntry.BuildId}.json").FullPath);
         await JsonSerializer.SerializeAsync(
             versionDataStream,
