@@ -1,0 +1,38 @@
+{
+    "steam": {
+        "appId": 3117820,
+        "gameDistDepots": [
+            {
+                "depotId": 3117821,
+                "distributionName": "Windows",
+                "isDefault": true
+            },
+            {
+                "depotId": 3117822,
+                "distributionName": "Linux",
+                "isDefault": false
+            },
+            {
+                "depotId": 3117823,
+                "distributionName": "MacOS",
+                "isDefault": false
+            }
+        ]
+    },
+    "processSettings": {
+        "excludeAssemblies": [
+            "Mono*.dll",
+            "netstandard.dll",
+            "System*.dll",
+            "mscorlib.dll"
+        ],
+        "assembliesToPublicise": [
+            "Assembly-CSharp.dll"
+        ],
+        "isIL2Cpp": true
+    },
+    "nuget": {
+        "name": "Sultan-sGame.GameLibs.Steam",
+        "description": "Stripped and publicised game libraries for modding Sultan's Game."
+    }
+}
